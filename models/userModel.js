@@ -34,6 +34,10 @@ const userSchema = new mongoose.Schema({
       contentType: String,
     },
   },
+  subscriptionStatus: {
+    type: Boolean,
+    default: false,
+  },
 });
 const userModel = mongoose.model("users", userSchema);
 module.exports = userModel;

@@ -8,6 +8,9 @@ const DBconnect = require("./connection/DBconnect");
 const registerationRouter = require("./routes/registerRouter.js");
 const profileRouter = require("./routes/ProfileRouter");
 const productRouter = require("./routes/productRouter");
+const packagesRouter = require("./routes/packagesRouter");
+const paymentRouter = require("./routes/paymentRouter");
+const couponRouter = require("./routes/couponRouter");
 
 const app = express();
 
@@ -19,7 +22,9 @@ app.use(cookieParser());
 app.use("/api/v1", registerationRouter);
 app.use("/api/v1", profileRouter);
 app.use("/api/v1", productRouter);
-
+app.use("/api/v1", packagesRouter);
+app.use("/api/v1", paymentRouter);
+app.use("/api/v1", couponRouter);
 app.listen(process.env.PORT, () => {
   console.log("Server running on port 1000");
 });

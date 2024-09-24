@@ -1,0 +1,11 @@
+const express = require("express");
+const router = express.Router();
+const createCoupon = require("../controllers/coupon_api's/createCoupon");
+const getCoupon = require("../controllers/coupon_api's/getCoupon");
+const deleteCoupon = require("../controllers/coupon_api's/deleteCoupon");
+const editCoupon = require("../controllers/coupon_api's/editCoupon");
+router.route("/coupon/create").post(createCoupon);
+router.route("/coupon/get").get(getCoupon);
+router.route("/coupon/delete").delete(deleteCoupon);
+router.route("/coupon/edit").put(editCoupon);
+module.exports = router;

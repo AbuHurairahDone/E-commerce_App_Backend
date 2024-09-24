@@ -1,0 +1,11 @@
+const express = require("express");
+const router = express.Router();
+const createPackage = require("../controllers/packages/createPackage");
+const getPackage = require("../controllers/packages/getPackage");
+const deletePackage = require("../controllers/packages/deletePackage");
+const editPackage = require("../controllers/packages/editPackage");
+router.route("/packages/create").post(createPackage);
+router.route("/packages/get").get(getPackage);
+router.route("/packages/delete").delete(deletePackage);
+router.route("/packages/edit").put(editPackage);
+module.exports = router;
